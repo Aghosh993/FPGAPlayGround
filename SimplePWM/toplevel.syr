@@ -1,0 +1,452 @@
+Release 14.2 - xst P.28xd (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: toplevel.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "toplevel.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "toplevel"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : toplevel
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/aghosh01/git/FPGAPlayGround/SimplePWM/clock_divider.vhd" in Library work.
+Architecture behavioral of Entity clock_divider is up to date.
+Compiling vhdl file "/home/aghosh01/git/FPGAPlayGround/SimplePWM/pwm_generator.vhd" in Library work.
+Entity <simplepwm> compiled.
+Entity <simplePWM> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "/home/aghosh01/git/FPGAPlayGround/SimplePWM/toplevel.vhd" in Library work.
+Entity <toplevel> compiled.
+Entity <toplevel> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <toplevel> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <clock_divider> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <simplePWM> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <toplevel> in library <work> (Architecture <behavioral>).
+Entity <toplevel> analyzed. Unit <toplevel> generated.
+
+Analyzing Entity <clock_divider> in library <work> (Architecture <behavioral>).
+Entity <clock_divider> analyzed. Unit <clock_divider> generated.
+
+Analyzing Entity <simplePWM> in library <work> (Architecture <Behavioral>).
+Entity <simplePWM> analyzed. Unit <simplePWM> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clock_divider>.
+    Related source file is "/home/aghosh01/git/FPGAPlayGround/SimplePWM/clock_divider.vhd".
+    Found 32-bit up counter for signal <counter>.
+    Found 1-bit register for signal <output>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <clock_divider> synthesized.
+
+
+Synthesizing Unit <simplePWM>.
+    Related source file is "/home/aghosh01/git/FPGAPlayGround/SimplePWM/pwm_generator.vhd".
+    Found 1-bit register for signal <pwm_output>.
+    Found 14-bit up counter for signal <counter>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <simplePWM> synthesized.
+
+
+Synthesizing Unit <toplevel>.
+    Related source file is "/home/aghosh01/git/FPGAPlayGround/SimplePWM/toplevel.vhd".
+Unit <toplevel> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 14-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 2
+ 1-bit register                                        : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 14-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <toplevel> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block toplevel, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 48
+ Flip-Flops                                            : 48
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : toplevel.ngr
+Top Level Output File Name         : toplevel
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 3
+
+Cell Usage :
+# BELS                             : 212
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 44
+#      LUT2                        : 47
+#      LUT2_L                      : 1
+#      LUT3                        : 1
+#      LUT4                        : 14
+#      LUT4_L                      : 2
+#      MUXCY                       : 52
+#      VCC                         : 1
+#      XORCY                       : 46
+# FlipFlops/Latches                : 48
+#      FDC                         : 47
+#      FDCE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 2
+#      IBUF                        : 1
+#      OBUF                        : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       59  out of   4656     1%  
+ Number of Slice Flip Flops:             48  out of   9312     0%  
+ Number of 4 input LUTs:                112  out of   9312     1%  
+ Number of IOs:                           3
+ Number of bonded IOBs:                   3  out of    232     1%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 33    |
+div_clock/output                   | NONE(pwm1/pwm_output)  | 15    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+clr                                | IBUF                   | 48    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.407ns (Maximum Frequency: 156.079MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.407ns (frequency: 156.079MHz)
+  Total number of paths / destination ports: 1585 / 34
+-------------------------------------------------------------------------
+Delay:               6.407ns (Levels of Logic = 33)
+  Source:            div_clock/counter_1 (FF)
+  Destination:       div_clock/counter_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: div_clock/counter_1 to div_clock/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.622  div_clock/counter_1 (div_clock/counter_1)
+     LUT1:I0->O            1   0.704   0.000  div_clock/Mcount_counter_cy<1>_rt (div_clock/Mcount_counter_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  div_clock/Mcount_counter_cy<1> (div_clock/Mcount_counter_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<2> (div_clock/Mcount_counter_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<3> (div_clock/Mcount_counter_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<4> (div_clock/Mcount_counter_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<5> (div_clock/Mcount_counter_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<6> (div_clock/Mcount_counter_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<7> (div_clock/Mcount_counter_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<8> (div_clock/Mcount_counter_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<9> (div_clock/Mcount_counter_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<10> (div_clock/Mcount_counter_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<11> (div_clock/Mcount_counter_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<12> (div_clock/Mcount_counter_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<13> (div_clock/Mcount_counter_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<14> (div_clock/Mcount_counter_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<15> (div_clock/Mcount_counter_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<16> (div_clock/Mcount_counter_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<17> (div_clock/Mcount_counter_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<18> (div_clock/Mcount_counter_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<19> (div_clock/Mcount_counter_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<20> (div_clock/Mcount_counter_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<21> (div_clock/Mcount_counter_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<22> (div_clock/Mcount_counter_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<23> (div_clock/Mcount_counter_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<24> (div_clock/Mcount_counter_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<25> (div_clock/Mcount_counter_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<26> (div_clock/Mcount_counter_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<27> (div_clock/Mcount_counter_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<28> (div_clock/Mcount_counter_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  div_clock/Mcount_counter_cy<29> (div_clock/Mcount_counter_cy<29>)
+     MUXCY:CI->O           0   0.059   0.000  div_clock/Mcount_counter_cy<30> (div_clock/Mcount_counter_cy<30>)
+     XORCY:CI->O           1   0.804   0.499  div_clock/Mcount_counter_xor<31> (Result<31>)
+     LUT2:I1->O            1   0.704   0.000  div_clock/Mcount_counter_eqn_311 (div_clock/Mcount_counter_eqn_31)
+     FDC:D                     0.308          div_clock/counter_31
+    ----------------------------------------
+    Total                      6.407ns (5.286ns logic, 1.121ns route)
+                                       (82.5% logic, 17.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'div_clock/output'
+  Clock period: 5.429ns (frequency: 184.196MHz)
+  Total number of paths / destination ports: 330 / 15
+-------------------------------------------------------------------------
+Delay:               5.429ns (Levels of Logic = 15)
+  Source:            pwm1/counter_1 (FF)
+  Destination:       pwm1/counter_13 (FF)
+  Source Clock:      div_clock/output rising
+  Destination Clock: div_clock/output rising
+
+  Data Path: pwm1/counter_1 to pwm1/counter_13
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.591   0.706  pwm1/counter_1 (pwm1/counter_1)
+     LUT1:I0->O            1   0.704   0.000  pwm1/Mcount_counter_cy<1>_rt (pwm1/Mcount_counter_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  pwm1/Mcount_counter_cy<1> (pwm1/Mcount_counter_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<2> (pwm1/Mcount_counter_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<3> (pwm1/Mcount_counter_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<4> (pwm1/Mcount_counter_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<5> (pwm1/Mcount_counter_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<6> (pwm1/Mcount_counter_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<7> (pwm1/Mcount_counter_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<8> (pwm1/Mcount_counter_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<9> (pwm1/Mcount_counter_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<10> (pwm1/Mcount_counter_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  pwm1/Mcount_counter_cy<11> (pwm1/Mcount_counter_cy<11>)
+     MUXCY:CI->O           0   0.059   0.000  pwm1/Mcount_counter_cy<12> (pwm1/Mcount_counter_cy<12>)
+     XORCY:CI->O           1   0.804   0.499  pwm1/Mcount_counter_xor<13> (Result<13>1)
+     LUT2:I1->O            1   0.704   0.000  pwm1/Mcount_counter_eqn_131 (pwm1/Mcount_counter_eqn_13)
+     FDC:D                     0.308          pwm1/counter_13
+    ----------------------------------------
+    Total                      5.429ns (4.224ns logic, 1.205ns route)
+                                       (77.8% logic, 22.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'div_clock/output'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            pwm1/pwm_output (FF)
+  Destination:       output (PAD)
+  Source Clock:      div_clock/output rising
+
+  Data Path: pwm1/pwm_output to output
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.447  pwm1/pwm_output (pwm1/pwm_output)
+     OBUF:I->O                 3.272          output_OBUF (output)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.15 secs
+ 
+--> 
+
+
+Total memory usage is 511104 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

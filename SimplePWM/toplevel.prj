@@ -1,0 +1,3 @@
+vhdl work "pwm_generator.vhd"
+vhdl work "clock_divider.vhd"
+vhdl work "toplevel.vhd"

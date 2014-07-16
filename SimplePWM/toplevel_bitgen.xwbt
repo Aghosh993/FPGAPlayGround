@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/aghosh01/git/FPGAPlayGround/SimplePWM/toplevel.ncd
+OUTFILE=/home/aghosh01/git/FPGAPlayGround/SimplePWM/toplevel.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/home/aghosh01/git/FPGAPlayGround/SimplePWM
+LICENSE=WebPack
+USER_INFO=210479570_0_0_256
